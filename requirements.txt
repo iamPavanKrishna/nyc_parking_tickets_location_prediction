@@ -1,0 +1,5 @@
+pyspark==2.4.6
+kafka-python
+xgboost
+pandas
+sklearn
