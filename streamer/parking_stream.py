@@ -1,4 +1,4 @@
-#!/usr/bin/python3                                                                                                      
+#! /usr/bin/python3                                                                                                      
 
 from kafka import KafkaProducer                                                                                         
 from random import randint                                                                                              

@@ -26,11 +26,11 @@ def predict_location(data):
 sc = SparkContext(appName="NYCPARKINGTICKETS")                                                                                     
 ssc = StreamingContext(sc, 5)                                                                                           
                                                                                                                  
-ss = SparkSession.builder.appName("NYCPARKINGTICKETS").config("spark.sql.warehouse.dir", "/user/hve/warehouse").config("hive.metastore.uris", "thrift://localhost:9083").enableHiveSupport().getOrCreate()                                                                                                  
+ss = SparkSession.builder.appName("NYCPARKINGTICKETS").config("spark.sql.warehouse.dir", "/user/hve/warehouse").config("hive.metastore.uris", "thrift://hadoop_hive:9083").enableHiveSupport().getOrCreate()                                                                                                  
                                                                                                                         
 ss.sparkContext.setLogLevel('WARN')            
                                                                                                             
-ks = KafkaUtils.createDirectStream(ssc, ['nycparkingtickets'], {'metadata.broker.list': 'localhost:9092'})                       
+ks = KafkaUtils.createDirectStream(ssc, ['nycparkingtickets'], {'metadata.broker.list': 'broker:9092'})                       
                                                                                                                  
 lines = ks.map(lambda x: x[1])                                                                                          
                                                                                                             

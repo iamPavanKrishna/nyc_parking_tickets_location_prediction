@@ -1,5 +1,5 @@
 #! /bin/bash
 
-# sleep 25
+sleep 10
 cd /app
-python3 parking_stream.py
+python3 /app/parking_stream.py

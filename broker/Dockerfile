@@ -39,3 +39,10 @@ RUN chmod u+x /app/broker.sh
 COPY server.properties /app/kafka/config/server.properties
 
 CMD /app/broker.sh
+
+# Configuration of supervisor
+# RUN mkdir -p /var/log/supervisor
+# RUN mkdir -p /etc/supervisor/conf.d
+# COPY supervisor.conf /etc/supervisor.conf
+
+# CMD ["supervisord", "-c", "/etc/supervisor.conf"]

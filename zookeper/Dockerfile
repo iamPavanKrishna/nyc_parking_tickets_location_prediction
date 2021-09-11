@@ -35,4 +35,11 @@ RUN pip3 install kafka-python
 COPY zookeper.sh /app/zookeper.sh
 RUN chmod u+x /app/zookeper.sh
 
+# Configuration of supervisor
+# RUN mkdir -p /var/log/supervisor
+# RUN mkdir -p /etc/supervisor/conf.d
+# COPY supervisor.conf /etc/supervisor.conf
+
 CMD /app/zookeper.sh
+
+# CMD ["supervisord", "-c", "/etc/supervisor.conf"]

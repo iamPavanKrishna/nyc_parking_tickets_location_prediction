@@ -52,6 +52,7 @@ ENV PYSPARK_PYTHON python3
 
 # Application code
 COPY transformer.py /app/transformer.py
+COPY XGBoost_model.pkl /app/XGBoost_model.pkl
 COPY start_spark.sh /app/start_spark.sh
 RUN chmod u+x /app/start_spark.sh
 
